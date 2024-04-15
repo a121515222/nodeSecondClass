@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "43f284f3-40a0-427e-bff2-3258e42d47b2",
+		"name": "post",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20974968"
+	},
+	"item": [
+		{
+			"name": "POST/posts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\":\"我是content11456461\",\r\n    \"name\":\"124564653\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nodesecondclass.onrender.com/posts",
+					"protocol": "https",
+					"host": [
+						"nodesecondclass",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET/posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/posts",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT/posts/",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\":\"我是改過的content\",\r\n    \"name\":\"1111\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/posts/661ca235335d9b8cd28282c9",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"661ca235335d9b8cd28282c9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE/posts",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://nodesecondclass.onrender.com/posts",
+					"protocol": "https",
+					"host": [
+						"nodesecondclass",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

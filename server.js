@@ -2,7 +2,7 @@ require("dotenv").config();
 const http = require("http");
 const mongoose = require("mongoose");
 const url = process.env.URL;
-console.log("rul", url);
+
 const postSchema = new mongoose.Schema({
   content: {
     type: String,
