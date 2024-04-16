@@ -44,7 +44,7 @@ const requestListener = async (req, res) => {
   req.on("data", (chunk) => {
     body += chunk;
   });
-  const data = JSON.parse(body);
+
   if (req.url == "/posts" && req.method == "GET") {
     const post = await Post.find();
     res.writeHead(200, headers);
@@ -58,6 +58,7 @@ const requestListener = async (req, res) => {
   } else if (req.url == "/posts" && req.method == "POST") {
     req.on("end", async () => {
       try {
+        const data = JSON.parse(body);
         if (data.content !== undefined) {
           const newPost = await Post.create({
             name: data.name,
@@ -107,10 +108,11 @@ const requestListener = async (req, res) => {
     const id = req.url.split("/").pop();
     req.on("end", async () => {
       try {
-        console.log("data", data);
+        const data = JSON.parse(body);
         if (data.content !== undefined) {
-          await Post.findByIdAndUpdate(id, data, { new: true });
-          const newPost = res.writeHead(200, headers);
+          const newPost = await Post.findByIdAndUpdate(id, data, { new: true });
+          console.log("newPost", newPost);
+          res.writeHead(200, headers);
           res.write(
             JSON.stringify({
               status: "success",
