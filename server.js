@@ -1,5 +1,5 @@
 require("dotenv").config();
-const { Post } = require("./Modal/modal");
+const { Post } = require("./Modal/post");
 const http = require("http");
 const mongoose = require("mongoose");
 const url = process.env.URL;
