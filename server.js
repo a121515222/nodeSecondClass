@@ -1,36 +1,12 @@
 require("dotenv").config();
+const { Post } = require("./Modal/modal");
 const http = require("http");
 const mongoose = require("mongoose");
 const url = process.env.URL;
 
-const postSchema = new mongoose.Schema({
-  content: {
-    type: String,
-    required: [true, "Content需填寫"],
-  },
-  image: {
-    type: String,
-    default: "",
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now(),
-    select: false,
-  },
-  name: {
-    type: String,
-    require: [true, "貼文姓名未填寫"],
-  },
-  likes: {
-    type: Number,
-    default: 0,
-  },
-});
-
 mongoose.connect(url).then(() => console.log("資料庫連接成功"));
 // schema 開始
 
-const Post = mongoose.model("Post", postSchema);
 // schema 結束
 const requestListener = async (req, res) => {
   const headers = {
